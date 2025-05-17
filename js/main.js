@@ -31,6 +31,14 @@ new Swiper('.menu-swiper', {
   breakpoints: {
     600: { slidesPerView: 2 },
     900: { slidesPerView: 3 }
+  },
+  // モバイル時はslidesPerView:2で端のスライドも見えるように
+  on: {
+    beforeInit: function(swiper) {
+      if(window.innerWidth <= 700) {
+        swiper.params.slidesPerView = 2;
+      }
+    }
   }
 });
 // お客様の声スライダー

@@ -138,10 +138,36 @@ h2 {
 }
 @media (max-width: 700px) {
   .menu img, .voice img {
-    height: 220px;
+    height: 60vw;
+    min-height: 180px;
+    max-height: 350px;
+  }
+  .menu-swiper, .voice-swiper {
+    min-height: 90vw;
+    height: auto;
+    overflow: visible !important;
   }
   .menu .swiper-wrapper, .voice .swiper-wrapper {
-    justify-content: center !important;
+    overflow: visible !important;
+  }
+  .menu .swiper-slide, .voice .swiper-slide {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 0;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+  }
+  .menu .swiper-pagination, .voice .swiper-pagination {
+    bottom: 0.7em !important;
+    position: absolute !important;
+    z-index: 10;
   }
 }
 .menu-swiper, .voice-swiper {
@@ -179,6 +205,23 @@ h2 {
   }
   .menu, .voice {
     padding: 1em 0 2em 0;
+  }
+  .menu .swiper-wrapper, .voice .swiper-wrapper {
+    justify-content: center !important;
+    align-items: stretch !important;
+    display: flex !important;
+  }
+  .menu .swiper-slide, .voice .swiper-slide {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90vw !important;
+    max-width: 400px;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 .btn {
@@ -277,6 +320,14 @@ h2 {
 
 .swiper-pagination-bullet-active {
   background: #d48ca6 !important;
+}
+
+.menu .swiper-pagination, .voice .swiper-pagination {
+  bottom: 1.5em;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 10;
 }
 
 /* --- ハンバーガーメニュー --- */
@@ -387,9 +438,9 @@ h2 {
     align-items: stretch;
   }
   .menu .swiper-slide, .voice .swiper-slide {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 90vw !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
     max-width: 400px;
     min-width: 0;
     box-sizing: border-box;
