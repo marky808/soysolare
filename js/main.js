@@ -32,6 +32,8 @@ new Swiper('.menu-swiper', {
     600: { slidesPerView: 2 },
     900: { slidesPerView: 3 }
   },
+  observer: true, // 動的なレイアウト変化に対応
+  observeParents: true, // 動的なレイアウト変化に対応
   // モバイル時はslidesPerView:2で端のスライドも見えるように
   on: {
     beforeInit: function(swiper) {
@@ -91,26 +93,3 @@ if(toTopBtn) {
     }
   });
 }
-
-// モバイル時カルーセル中央寄せ調整
-function adjustSwiperCenter() {
-  if(window.innerWidth <= 900) {
-    document.querySelectorAll('.menu-swiper .swiper-wrapper, .voice-swiper .swiper-wrapper').forEach(w => {
-      w.style.justifyContent = 'center';
-    });
-    document.querySelectorAll('.menu-swiper .swiper-slide, .voice-swiper .swiper-slide').forEach(s => {
-      s.style.marginLeft = 'auto';
-      s.style.marginRight = 'auto';
-    });
-  } else {
-    document.querySelectorAll('.menu-swiper .swiper-wrapper, .voice-swiper .swiper-wrapper').forEach(w => {
-      w.style.justifyContent = '';
-    });
-    document.querySelectorAll('.menu-swiper .swiper-slide, .voice-swiper .swiper-slide').forEach(s => {
-      s.style.marginLeft = '';
-      s.style.marginRight = '';
-    });
-  }
-}
-window.addEventListener('resize', adjustSwiperCenter);
-window.addEventListener('DOMContentLoaded', adjustSwiperCenter);
