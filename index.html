@@ -16,16 +16,13 @@
   <!-- グローバルナビ -->
   <header>
     <nav class="global-nav">
-      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="メニューを開く"><span></span><span></span><span></span></button>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#concept">Concept</a></li>
-        <li><a href="#menu">Menu & Price</a></li>
-        <li><a href="#beginners">For Beginners</a></li>
-        <li><a href="#bridal">Bridal Esthetics</a></li>
-        <li><a href="#mother">Mother & Daughter</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#access">Access & Booking</a></li>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#concept">コンセプト</a></li>
+        <li><a href="#menu">メニュー・料金</a></li>
+        <li><a href="#bridal">ブライダルエステ</a></li>
+        <li><a href="#access">アクセス・予約</a></li>
       </ul>
     </nav>
   </header>
@@ -33,28 +30,16 @@
   <!-- モバイル用：上に戻るボタン -->
   <button class="to-top" aria-label="上に戻る"><i class="fa-solid fa-chevron-up"></i></button>
 
-  <!-- ヒーロー画像（スライダー） -->
+  <!-- ヒーロー画像（1枚のみ、スライドショーなし） -->
   <section class="hero">
-    <div class="swiper hero-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="フェイシャル施術イメージ">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="サロン室内イメージ">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="最新機器イメージ">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80" alt="オーナーの笑顔">
-        </div>
-      </div>
-      <div class="hero-catch">
-        <h1>完全予約・女性専用プライベートサロン</h1>
-        <p>医療級の効果を、安心できる空間で。</p>
-      </div>
-      <div class="swiper-pagination"></div>
+    <div class="hero-image-wrap">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="フェイシャル施術イメージ">
+      <div class="hero-catch-text--top">仲町台駅徒歩3分／TEL: 045-123-4567</div>
+      <div class="hero-catch-text">
+        <span>完全予約・女性専用プライベートサロン</span><br>
+        <span>医療級の効果を、安心できる空間で。</span>
+      </div>      <div class="hero-main-title">Private Salon</div>
+      <div class="hero-sub-title">Soy Solare</div>
     </div>
   </section>
 
@@ -67,33 +52,45 @@
     </p>
   </section>
 
-  <!-- おすすめメニュー（シンプルなリスト表示） -->
-  <section class="menu-simple" id="menu">
-    <h2>Recommended Menu</h2>
-    <div class="menu-list">
-      <div class="menu-item">
-        <h3>生プラセンタ美顔</h3>
-        <p>医療レベルの機器で浸透力が大幅アップ。ハリと透明感をしっかり実感できる人気の美顔コースです。</p>
+  <!-- メニュー（日本語） -->
+  <section class="menu-carousel" id="menu">
+    <h2>おすすめメニュー</h2>
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active">
+          <h3>生プラセンタ美顔</h3>
+          <p>医療レベルの機器で浸透力が大幅アップ。ハリと透明感をしっかり実感できる人気の美顔コースです。</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>レモンボトル施術</h3>
+          <p>話題の高濃度ビタミン美容でエイジングケア。お肌の明るさとハリを求める方におすすめです。</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>医療級脱毛</h3>
+          <p>敏感肌の方も安心の最新脱毛機器を使用。女性施術者による丁寧なケアでリラックスできます。</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>花嫁・新郎ペアプラン</h3>
+          <p>挙式に向けてカップルで美しくなれる特別プラン。大切な日のために二人で一緒にケアしませんか？</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>母娘ペアエステ</h3>
+          <p>親子で一緒に体験できる特別なエステプラン。安心と絆を深めながら、リラックスした時間をお過ごしいただけます。</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>ソイプロテイン健康美容</h3>
+          <p>内側からもキレイをサポートする健康美容コース。美と健康を両立したい方におすすめです。</p>
+        </div>
       </div>
-      <div class="menu-item">
-        <h3>レモンボトル施術</h3>
-        <p>話題の高濃度ビタミン美容でエイジングケア。お肌の明るさとハリを求める方におすすめです。</p>
-      </div>
-      <div class="menu-item">
-        <h3>医療級脱毛</h3>
-        <p>敏感肌の方も安心の最新脱毛機器を使用。女性施術者による丁寧なケアでリラックスできます。</p>
-      </div>
-      <div class="menu-item">
-        <h3>花嫁・新郎ペアプラン</h3>
-        <p>挙式に向けてカップルで美しくなれる特別プラン。大切な日のために二人で一緒にケアしませんか？</p>
-      </div>
-      <div class="menu-item">
-        <h3>母娘ペアエステ</h3>
-        <p>親子で一緒に体験できる特別なエステプラン。安心と絆を深めながら、リラックスした時間をお過ごしいただけます。</p>
-      </div>
-      <div class="menu-item">
-        <h3>ソイプロテイン健康美容</h3>
-        <p>内側からもキレイをサポートする健康美容コース。美と健康を両立したい方におすすめです。</p>
+      <button class="carousel-btn prev-btn" aria-label="前のスライド">‹</button>
+      <button class="carousel-btn next-btn" aria-label="次のスライド">›</button>
+      <div class="carousel-dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
+        <span class="dot" data-slide="5"></span>
       </div>
     </div>
   </section>
