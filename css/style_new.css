@@ -1,0 +1,405 @@
+/* 最適化されたフォントシステム */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+/* 基本設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 統一されたタイポグラフィシステム */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #333;
+  background: linear-gradient(135deg, #fdf6f8 0%, #f8d7e5 100%);
+  min-height: 100vh;
+}
+
+/* ブランド要素 */
+.logo, h1, h2 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}
+
+/* コンセプトメッセージ */
+.concept-content h3, .main-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* 本文テキスト */
+p, .sub-message {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+}
+
+/* ヘッダー */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(212, 140, 166, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #d48ca6;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #d48ca6;
+}
+
+/* メインコンテンツエリア */
+main {
+  padding-top: 0; /* ヒーローセクションは固定ヘッダーの下に配置 */
+}
+
+/* ヒーローセクション */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #fdf6f8 0%, #f8d7e5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1920&q=80') center/cover;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: shimmer 8s linear infinite;
+}
+
+.hero-content h1 {
+  font-size: 9rem;
+  margin-bottom: 1rem;
+  color: #d48ca6;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 2.7rem;
+  color: #d48ca6;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+/* セクション共通スタイル */
+section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+section h2 {
+  font-size: 3rem;
+  color: #d48ca6;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+section p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* コンセプトセクション */
+#concept {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.concept-content h3 {
+  font-size: 2.5rem;
+  color: #d48ca6;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, #d48ca6, #f8d7e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.concept-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-item {
+  background: rgba(248, 215, 229, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(212, 140, 166, 0.1);
+}
+
+.feature-item h4 {
+  font-size: 1.3rem;
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}
+
+.concept-closing {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(248, 215, 229, 0.1);
+  border-radius: 15px;
+}
+
+.main-message {
+  font-size: 1.8rem;
+  color: #d48ca6;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.sub-message {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* おすすめセクション */
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.recommend-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(212, 140, 166, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommend-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.2);
+}
+
+.recommend-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.recommend-content {
+  padding: 1.5rem;
+}
+
+.recommend-content h3 {
+  font-size: 1.4rem;
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}
+
+.recommend-content p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.detail-link {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: #d48ca6;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.detail-link:hover {
+  border-bottom-color: #d48ca6;
+}
+
+/* フッター */
+.footer {
+  background: rgba(212, 140, 166, 0.1);
+  margin-top: 4rem;
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.footer-info h3 {
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+}
+
+.footer-info p {
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.footer-nav h4 {
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+.footer-nav ul {
+  list-style: none;
+}
+
+.footer-nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-nav ul li a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: #d48ca6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(212, 140, 166, 0.1);
+}
+
+.footer-bottom p {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.8rem;
+  }
+  
+  section {
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+  }
+  
+  section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .concept-content h3 {
+    font-size: 2rem;
+  }
+  
+  .main-message {
+    font-size: 1.5rem;
+  }
+  
+  .recommend-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+  
+  .nav {
+    padding: 0 1rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+}

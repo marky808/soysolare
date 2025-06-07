@@ -1,25 +1,40 @@
-/* 完全リセット */
+/* 最適化されたフォントシステム */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+/* 基本設定 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+/* 統一されたタイポグラフィシステム */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #333;
+  background: linear-gradient(135deg, #fdf6f8 0%, #f8d7e5 100%);
+  min-height: 100vh;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  min-height: 100vh;
+/* ブランド要素 */
+.logo, h1, h2 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}
+
+/* コンセプトメッセージ */
+.concept-content h3, .main-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* 本文テキスト */
+p, .sub-message {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
 }
 
 /* ヘッダー */
@@ -28,311 +43,752 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(212, 140, 166, 0.1);
 }
 
 .nav {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .logo {
+  font-size: 2.8rem;
   color: #d48ca6;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: 'Dancing Script', cursive;
+  text-decoration: none;
   font-weight: 700;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(212, 140, 166, 0.4);
 }
 
 .nav-menu {
-  list-style: none;
   display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+  list-style: none;
+  gap: 2.5rem;
 }
 
 .nav-menu a {
-  color: white;
+  color: #333;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
   padding: 0.5rem 1rem;
-  border-radius: 25px;
-  transition: all 0.3s ease;
+  border-radius: 20px;
 }
 
 .nav-menu a:hover {
-  background: rgba(212, 140, 166, 0.3);
   color: #d48ca6;
+  background: rgba(212, 140, 166, 0.1);
 }
 
-/* ヒーローセクション */
+/* ハンバーガーメニュー（モバイル用） */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+
+.nav-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #d48ca6;
+  margin: 4px 0;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 7px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -7px);
+}
+
+/* ヒーローセクション - より洗練されたデザイン */
 .hero {
-  height: 80vh;
-  width: calc(100% - 2rem);
-  max-width: 1400px;
-  margin: 80px auto 0 auto;
-  background-image: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=2400&q=95');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1920&q=80') center/cover;
   position: relative;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  margin-top: -120px;
+  padding-top: 120px;
 }
 
-.hero::before {
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: shimmer 8s linear infinite;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 3rem 4rem;
+  border-radius: 30px;
+  border: 1px solid rgba(212, 140, 166, 0.3);
+  box-shadow: 0 10px 40px rgba(212, 140, 166, 0.15);
+}
+
+.hero-content h1 {
+  font-size: 8rem;
+  margin-bottom: 1.5rem;
+  color: #d48ca6;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.8);
+  letter-spacing: 3px;
+}
+
+.hero-content p {
+  font-size: 2.5rem;
+  color: #d48ca6;
+  font-weight: 400;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.6);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+/* キラキラ輝くアニメーション効果 */
+.sparkle-text {
+  position: relative;
+  display: inline-block;
+}
+
+.sparkle-letters {
+  position: relative;
+  z-index: 2;
+  color: #d48ca6;
+}
+
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sparkle {
+  position: absolute;
+  background: radial-gradient(circle, #fff 0%, rgba(255, 255, 255, 0.8) 30%, transparent 70%);
+  border-radius: 50%;
+  animation: sparkleFloat 2s infinite ease-in-out;
+  opacity: 0;
+}
+
+/* 大きなキラキラ（ヒーローh1用） */
+.sparkles:not(.sparkles-small):not(.sparkles-medium) .sparkle {
+  width: 6px;
+  height: 6px;
+}
+
+.sparkles:not(.sparkles-small):not(.sparkles-medium) .sparkle:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 2.5s;
+}
+
+.sparkles:not(.sparkles-small):not(.sparkles-medium) .sparkle:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation-delay: 0.8s;
+  animation-duration: 2s;
+}
+
+.sparkles:not(.sparkles-small):not(.sparkles-medium) .sparkle:nth-child(3) {
+  top: 30%;
+  left: 70%;
+  animation-delay: 1.2s;
+  animation-duration: 3s;
+}
+
+.sparkles:not(.sparkles-small):not(.sparkles-medium) .sparkle:nth-child(4) {
+  top: 80%;
+  left: 20%;
+  animation-delay: 0.4s;
+  animation-duration: 2.8s;
+}
+
+.sparkles:not(.sparkles-small):not(.sparkles-medium) .sparkle:nth-child(5) {
+  top: 10%;
+  left: 50%;
+  animation-delay: 1.6s;
+  animation-duration: 2.2s;
+}
+
+.sparkles:not(.sparkles-small):not(.sparkles-medium) .sparkle:nth-child(6) {
+  top: 70%;
+  left: 45%;
+  animation-delay: 2s;
+  animation-duration: 2.6s;
+}
+
+/* 中サイズキラキラ（セクションタイトル用） */
+.sparkles-medium .sparkle {
+  width: 4px;
+  height: 4px;
+}
+
+.sparkles-medium .sparkle:nth-child(1) {
+  top: 15%;
+  left: 15%;
+  animation-delay: 0.2s;
+  animation-duration: 2s;
+}
+
+.sparkles-medium .sparkle:nth-child(2) {
+  top: 70%;
+  left: 85%;
+  animation-delay: 1s;
+  animation-duration: 2.5s;
+}
+
+.sparkles-medium .sparkle:nth-child(3) {
+  top: 40%;
+  left: 75%;
+  animation-delay: 1.5s;
+  animation-duration: 2.2s;
+}
+
+.sparkles-medium .sparkle:nth-child(4) {
+  top: 80%;
+  left: 25%;
+  animation-delay: 0.7s;
+  animation-duration: 2.8s;
+}
+
+/* 小さなキラキラ（サブタイトル用） */
+.sparkles-small .sparkle {
+  width: 3px;
+  height: 3px;
+}
+
+.sparkles-small .sparkle:nth-child(1) {
+  top: 25%;
+  left: 20%;
+  animation-delay: 0.5s;
+  animation-duration: 2.3s;
+}
+
+.sparkles-small .sparkle:nth-child(2) {
+  top: 65%;
+  left: 80%;
+  animation-delay: 1.2s;
+  animation-duration: 2s;
+}
+
+.sparkles-small .sparkle:nth-child(3) {
+  top: 45%;
+  left: 70%;
+  animation-delay: 1.8s;
+  animation-duration: 2.7s;
+}
+
+@keyframes sparkleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0);
+  }
+}
+
+/* きっぱりした鮮明なキラキラエフェクト（ソリッドホワイト + ピンクボーダー） */
+.sparkles-sharp .sparkle {
+  background: #fff;
+  border: 1px solid #d48ca6;
+  border-radius: 2px;
+  box-shadow: 
+    0 0 0 1px rgba(212, 140, 166, 0.2),
+    0 0 4px #fff,
+    0 0 6px rgba(212, 140, 166, 0.4),
+    inset 0 0 3px rgba(212, 140, 166, 0.1);
+  width: 2px;
+  height: 2px;
+  animation: sparkleSharpFloat 2.5s infinite ease-in-out;
+}
+
+.sparkles-sharp .sparkle:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0.3s;
+  animation-duration: 2.8s;
+}
+
+.sparkles-sharp .sparkle:nth-child(2) {
+  top: 70%;
+  left: 80%;
+  animation-delay: 1.1s;
+  animation-duration: 2.3s;
+}
+
+.sparkles-sharp .sparkle:nth-child(3) {
+  top: 40%;
+  left: 75%;
+  animation-delay: 1.7s;
+  animation-duration: 2.6s;
+}
+
+.sparkles-sharp .sparkle:nth-child(4) {
+  top: 80%;
+  left: 25%;
+  animation-delay: 0.8s;
+  animation-duration: 3s;
+}
+
+.sparkles-sharp .sparkle:nth-child(5) {
+  top: 10%;
+  left: 50%;
+  animation-delay: 1.6s;
+  animation-duration: 2.2s;
+}
+
+.sparkles-sharp .sparkle:nth-child(6) {
+  top: 70%;
+  left: 45%;
+  animation-delay: 2s;
+  animation-duration: 2.6s;
+}
+
+@keyframes sparkleSharpFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0);
+    box-shadow: 
+      0 0 0 1px rgba(212, 140, 166, 0.2),
+      0 0 2px #fff,
+      0 0 3px rgba(212, 140, 166, 0.2);
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateY(0) scale(1);
+    box-shadow: 
+      0 0 0 1px rgba(212, 140, 166, 0.3),
+      0 0 4px #fff,
+      0 0 6px rgba(212, 140, 166, 0.4);
+  }
+  75% {
+    opacity: 0.8;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 
+      0 0 0 1px rgba(212, 140, 166, 0.4),
+      0 0 6px #fff,
+      0 0 8px rgba(212, 140, 166, 0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px) scale(0);
+    box-shadow: 
+      0 0 0 1px rgba(212, 140, 166, 0.1),
+      0 0 2px #fff,
+      0 0 4px rgba(212, 140, 166, 0.2);
+  }
+}
+
+/* 各セクションタイトルのグロウ効果 */
+#bridal h2.sparkle-text {
+  animation: bridalTitleGlow 6s ease-in-out infinite;
+}
+
+#reservation h2.sparkle-text {
+  animation: reservationTitleGlow 5.5s ease-in-out infinite;
+}
+
+#contact h2.sparkle-text {
+  animation: contactTitleGlow 7s ease-in-out infinite;
+}
+
+@keyframes bridalTitleGlow {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(212, 140, 166, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(212, 140, 166, 0.7), 0 0 40px rgba(248, 215, 229, 0.5), 0 0 50px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes reservationTitleGlow {
+  0%, 100% {
+    text-shadow: 0 0 12px rgba(212, 140, 166, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(212, 140, 166, 0.6), 0 0 35px rgba(248, 215, 229, 0.4), 0 0 45px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes contactTitleGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(212, 140, 166, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(212, 140, 166, 0.5), 0 0 30px rgba(248, 215, 229, 0.3), 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* 革新的なレイアウトシステム */
+main {
+  padding-top: 2rem;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* セクション基本設定 - フルワイドとコンテナ分離 */
+section {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  max-width: none;
+  position: relative;
+}
+
+/* コンテナシステム - 複数タイプ */
+.concept-container,
+.recommend-container,
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* コンセプトセクション - 新しいカード型レイアウト */
+#concept {
+  background: linear-gradient(135deg, rgba(248, 215, 229, 0.2) 0%, rgba(255, 255, 255, 0.9) 100%);
+  padding: 6rem 0;
+  position: relative;
+}
+
+#concept::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2400&q=80') center/cover;
+  opacity: 0.03;
+  z-index: 1;
 }
 
-.hero-content {
+.concept-header {
   text-align: center;
-  color: white;
-  z-index: 10;
+  margin-bottom: 5rem;
   position: relative;
+  z-index: 2;
 }
 
-.hero-content h1 {
-  font-size: 9rem;
-  margin-bottom: 1rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-  font-family: 'Dancing Script', cursive;
+.concept-header h2 {
+  font-size: 5rem;
+  color: #d48ca6;
+  margin-bottom: 2rem;
   font-weight: 700;
-  letter-spacing: 4px;
-  color: #f8d7e5;
+  letter-spacing: 2px;
 }
 
-.hero-content p {
-  font-size: 2.7rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  color: #f8d7e5;
-  font-weight: 500;
+.concept-header h3 {
+  font-size: 3.2rem;
+  color: #d48ca6;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
   letter-spacing: 1px;
 }
 
-/* メインコンテンツ */
-main {
-  padding: 1rem;
-  background: #f8f9fa;
-  max-width: 100%;
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
-}
-
-section {
-  max-width: 1400px;
-  margin: 0 auto 4rem auto;
-  padding: 2.5rem 2rem;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(212, 140, 166, 0.1);
-  width: calc(100% - 2rem);
-}
-
-h2 {
-  color: #d48ca6;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-family: 'Dancing Script', cursive;
-  font-size: 3.5rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(212, 140, 166, 0.3);
-  position: relative;
-  padding-bottom: 1rem;
-}
-
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #d48ca6, transparent);
-  border-radius: 2px;
-}
-
-p {
-  text-align: center;
-  line-height: 1.9;
-  font-size: 1.2rem;
-  color: #555;
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  letter-spacing: 0.3px;
-}
-
-/* コンセプトセクション */
-.concept-content {
-  max-width: 1400px;
+.concept-header .concept-description {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 1.8;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.concept-content h3 {
-  font-size: 2.8rem;
-  font-weight: 300;
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, #d48ca6 0%, #b8859b 50%, #c494aa 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #d48ca6; /* フォールバック */
-  line-height: 1.5;
-  font-style: italic;
+.concept-content {
+  position: relative;
+  z-index: 2;
 }
 
-.concept-features {
+/* 特徴カード */
+.feature-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(212, 140, 166, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  min-height: 400px;
 }
 
-.feature-item {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  padding: 2.5rem;
-  border-radius: 20px;
-  border-left: 5px solid #d48ca6;
-  box-shadow: 0 6px 20px rgba(212, 140, 166, 0.12);
-  transition: all 0.3s ease;
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(212, 140, 166, 0.18);
 }
 
-.feature-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(212, 140, 166, 0.2);
+/* 左画像レイアウト */
+.feature-card-left .feature-image {
+  order: 1;
 }
 
-.feature-item h4 {
+.feature-card-left .feature-text {
+  order: 2;
+  padding: 3rem 4rem 3rem 2rem;
+}
+
+/* 右画像レイアウト */
+.feature-card-right .feature-image {
+  order: 2;
+}
+
+.feature-card-right .feature-text {
+  order: 1;
+  padding: 3rem 2rem 3rem 4rem;
+}
+
+.feature-image {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.feature-card:hover .feature-image img {
+  transform: scale(1.1);
+}
+
+.feature-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(212, 140, 166, 0.1) 0%, rgba(248, 215, 229, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-card:hover .feature-image::after {
+  opacity: 1;
+}
+
+.feature-text h4 {
+  font-size: 2.2rem;
   color: #d48ca6;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 1px;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
+  margin-bottom: 2rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-.feature-item p {
-  color: #555;
+.feature-text p {
+  font-size: 1.2rem;
   line-height: 1.8;
-  text-align: left;
-  margin: 0;
-  font-size: 1.1rem;
+  color: #555;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 300;
-  letter-spacing: 0.3px;
 }
 
+/* クロージングセクション */
 .concept-closing {
+  position: relative;
+  margin-top: 6rem;
+  border-radius: 30px;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closing-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.closing-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.closing-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 140, 166, 0.8) 0%, rgba(248, 215, 229, 0.9) 100%);
+  z-index: 2;
+}
+
+.closing-content {
+  position: relative;
+  z-index: 3;
   text-align: center;
-  margin-top: 4rem;
-  padding: 3rem 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 4rem;
+  color: white;
 }
 
 .main-message {
-  font-size: 2.8rem;
-  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
+  font-weight: 500;
   font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 2px;
-  margin-bottom: 3rem;
-  background: linear-gradient(135deg, #d48ca6 0%, #b8859b 50%, #c494aa 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #d48ca6; /* フォールバック */
-  line-height: 1.5;
   font-style: italic;
-  position: relative;
-}
-
-.main-message::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d48ca6, transparent);
-  border-radius: 2px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .sub-message {
-  font-size: 1.4rem;
-  line-height: 2.0;
-  color: #666;
-  font-weight: 300;
-  margin: 0;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.3rem;
+  line-height: 1.8;
   font-family: 'Noto Sans JP', sans-serif;
-  letter-spacing: 1px;
+  font-weight: 300;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* おすすめセクション */
+/* セクションタイトルスタイル */
+section h2 {
+  font-size: 5rem;
+  color: #d48ca6;
+  text-align: left;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* おすすめセクション - 非対称レイアウト */
+#recommend {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 215, 229, 0.2) 100%);
+  padding: 7rem 0;
+  position: relative;
+}
+
+#recommend::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 140, 166, 0.05) 0%, rgba(248, 215, 229, 0.1) 100%);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
+}
+
+.recommend-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.recommend-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  margin-top: 1.5rem;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+}
+
 .recommend-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 2;
 }
 
 .recommend-item {
-  background: white;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(212, 140, 166, 0.1);
+  box-shadow: 0 15px 40px rgba(212, 140, 166, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.recommend-item:nth-child(odd) {
+  transform: translateY(-2rem);
+}
+
+.recommend-item:nth-child(even) {
+  transform: translateY(2rem);
 }
 
 .recommend-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1rem) scale(1.02);
+  box-shadow: 0 25px 60px rgba(212, 140, 166, 0.25);
 }
 
 .recommend-image {
-  width: 100%;
-  height: 220px;
   overflow: hidden;
+  height: 300px;
+  position: relative;
 }
 
 .recommend-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .recommend-item:hover .recommend-image img {
@@ -340,432 +796,872 @@ p {
 }
 
 .recommend-content {
-  padding: 2rem;
+  padding: 2.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .recommend-content h3 {
+  font-size: 1.8rem;
   color: #d48ca6;
-  font-size: 1.4rem;
-  margin-bottom: 1.2rem;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 1px;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
+  margin-bottom: 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
 }
 
 .recommend-content p {
+  font-size: 1.1rem;
   color: #666;
-  line-height: 1.7;
+  line-height: 1.8;
+  margin-bottom: auto;
   text-align: left;
-  margin: 0 0 1.5rem 0;
-  font-size: 1.05rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.3px;
+  flex-grow: 1;
 }
 
 .detail-link {
   display: inline-block;
-  color: #d48ca6;
-  text-decoration: none;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
+  color: #d48ca6;
+  text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
+  padding: 1rem 0;
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
-  position: relative;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .detail-link:hover {
-  color: #b8859b;
-  border-bottom: 1px solid #d48ca6;
-  transform: translateX(3px);
+  border-bottom-color: #d48ca6;
+  transform: translateX(5px);
 }
 
-.detail-link::after {
-  content: ' →';
-  transition: transform 0.3s ease;
+/* その他のセクション - 統一デザイン */
+#bridal,
+#reservation,
+#contact {
+  padding: 5rem 0;
+  margin: 4rem 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0;
+  position: relative;
 }
 
-.detail-link:hover::after {
-  transform: translateX(3px);
+#bridal::before,
+#reservation::before,
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(212, 140, 166, 0.03) 0%, rgba(248, 215, 229, 0.08) 100%);
+  clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
 }
 
-/* フッター */
+.bridal-content,
+.reservation-content,
+.contact-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bridal-subtitle,
+.reservation-subtitle {
+  font-size: 1.4rem;
+  color: #d48ca6;
+  margin-bottom: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.bridal-description {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.contact-info {
+  background: rgba(248, 215, 229, 0.1);
+  padding: 3rem;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.tel-number {
+  font-size: 1.5rem;
+  color: #d48ca6;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.business-hours,
+.location {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0.8rem 0;
+}
+
+/* フッター - 洗練されたデザイン */
 .footer {
-  background: #2d2d2d;
-  color: white;
-  padding: 2rem 0 1rem 0;
+  background: linear-gradient(135deg, rgba(212, 140, 166, 0.08) 0%, rgba(248, 215, 229, 0.15) 100%);
+  margin-top: 6rem;
+  padding: 4rem 0 1rem;
+  position: relative;
+  border-top: 1px solid rgba(212, 140, 166, 0.1);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #d48ca6 50%, transparent 100%);
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.footer-info,
+.footer-nav {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 140, 166, 0.1);
 }
 
 .footer-info h3 {
   color: #d48ca6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
   font-weight: 600;
-  letter-spacing: 1px;
 }
 
 .footer-info p {
-  margin-bottom: 0.5rem;
+  color: #666;
+  margin-bottom: 0.8rem;
   text-align: left;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.3px;
+  line-height: 1.6;
 }
 
 .footer-nav h4 {
   color: #d48ca6;
-  margin-bottom: 1rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .footer-nav ul {
   list-style: none;
-  padding: 0;
 }
 
-.footer-nav li {
-  margin-bottom: 0.5rem;
+.footer-nav ul li {
+  margin-bottom: 0.8rem;
 }
 
-.footer-nav a {
-  color: #ccc;
+.footer-nav ul li a {
+  color: #666;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  display: block;
+  border-radius: 8px;
+  padding-left: 1rem;
 }
 
-.footer-nav a:hover {
+.footer-nav ul li a:hover {
   color: #d48ca6;
+  background: rgba(212, 140, 166, 0.1);
+  transform: translateX(5px);
 }
 
 .footer-bottom {
-  border-top: 1px solid #444;
-  padding: 1rem 2rem;
   text-align: center;
+  padding: 2.5rem;
   margin-top: 2rem;
-  color: #ccc;
+  border-top: 1px solid rgba(212, 140, 166, 0.1);
 }
 
-/* パフォーマンス最適化 */
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.footer-bottom p {
+  color: #999;
+  font-size: 0.95rem;
+  font-style: italic;
 }
 
-/* アニメーション最適化 */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* ブライダルセクション - 訴求力強化 */
+.bridal-section {
+  padding: 0;
+  margin: 0;
 }
 
-/* GPU加速の安定化 */
-.hero,
-.feature-item {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+.bridal-hero-mini {
+  min-height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(212, 140, 166, 0.3)), 
+              url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* スクロール最適化 */
-html {
-  scroll-behavior: smooth;
+.bridal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(212, 140, 166, 0.1), rgba(248, 215, 229, 0.1));
+  z-index: 1;
 }
 
-@supports (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: smooth;
-  }
+.bridal-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 1000px;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-/* ブラウザ互換性の向上 */
-
-/* フォントローディング最適化 */
-/* Google Fontsを使用しているため、font-displayはGoogle Fonts URLで制御 */
-
-/* 安定したホバーエフェクト */
-.feature-item,
-.recommend-item {
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.bridal-content h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
-/* レイアウトシフト防止 */
-img {
-  max-width: 100%;
-  height: auto;
+.bridal-catchcopy {
+  font-size: 2.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: #f8d7e5;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-.recommend-image img {
+.bridal-description {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.bridal-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.highlight-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #f8d7e5;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.highlight-item p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.bridal-pricing {
+  margin-bottom: 3rem;
+}
+
+.price-highlight {
+  display: inline-block;
+  background: linear-gradient(45deg, #d48ca6, #f8d7e5);
+  padding: 2rem 3rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.price-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.price-amount {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.price-amount small {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.price-note {
+  display: block;
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.bridal-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bridal-button {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+}
+
+.bridal-button.primary {
+  background: white;
+  color: #d48ca6;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.bridal-button.primary:hover {
+  background: #f8f9fa;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
+}
+
+.bridal-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bridal-button.secondary:hover {
+  background: white;
+  color: #d48ca6;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* リザベーションセクション - プロセス図解と訴求強化 */
+.reservation-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #fdf6f8 0%, #f8d7e5 50%, #fdf6f8 100%);
+}
+
+.reservation-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+.reservation-header h2 {
+  font-size: 4rem;
+  color: #d48ca6;
+  margin-bottom: 1.5rem;
+}
+
+.reservation-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  line-height: 1.6;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+/* 予約プロセス */
+.reservation-process {
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+  padding: 0 2rem;
+}
+
+.process-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #d48ca6;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(212, 140, 166, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(212, 140, 166, 0.03), rgba(248, 215, 229, 0.03));
+  z-index: 1;
+}
+
+.step-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border: 2px solid rgba(212, 140, 166, 0.1);
+  transition: all 0.3s ease;
+}
+
+.step-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(212, 140, 166, 0.2);
+  border-color: rgba(212, 140, 166, 0.3);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #d48ca6, #f8d7e5);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(212, 140, 166, 0.3);
+}
+
+.step-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.step-item h4 {
+  font-size: 1.3rem;
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.step-item p {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.step-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.detail-time {
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.detail-note {
+  font-size: 0.8rem;
+  color: #d48ca6;
+  font-weight: 600;
+  background: rgba(212, 140, 166, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+}
+
+.step-arrow {
+  color: #d48ca6;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(212, 140, 166, 0.3);
+}
+
+/* 予約方法 */
+.reservation-methods {
+  max-width: 1000px;
+  margin: 0 auto 6rem;
+  padding: 0 2rem;
+}
+
+.methods-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #d48ca6;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+}
+
+.method-item {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(212, 140, 166, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.method-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(212, 140, 166, 0.25);
+}
+
+.method-item.phone {
+  border-color: rgba(74, 144, 226, 0.2);
+}
+
+.method-item.line {
+  border-color: rgba(0, 195, 0, 0.2);
+}
+
+.method-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.method-item h4 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.tel-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.line-id {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #00c300;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.method-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.method-hours p,
+.method-benefits p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.method-benefits p {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.method-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(45deg, #d48ca6, #f8d7e5);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.3);
+}
+
+.method-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(212, 140, 166, 0.4);
+}
+
+.line-button {
+  background: linear-gradient(45deg, #00c300, #00e600);
+  box-shadow: 0 10px 30px rgba(0, 195, 0, 0.3);
+}
+
+.line-button:hover {
+  box-shadow: 0 15px 40px rgba(0, 195, 0, 0.4);
+}
+
+/* 予約のメリット */
+.reservation-benefits {
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+  padding: 0 2rem;
+}
+
+.benefits-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #d48ca6;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(212, 140, 166, 0.1);
   transition: transform 0.3s ease;
-  will-change: transform;
+  border: 2px solid rgba(212, 140, 166, 0.05);
 }
 
-.recommend-item:hover .recommend-image img {
-  will-change: auto;
+.benefit-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 140, 166, 0.2);
 }
 
-/* レスポンシブ */
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.benefit-item h4 {
+  font-size: 1.3rem;
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.benefit-item p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* CTA */
+.reservation-cta {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.cta-content {
+  background: linear-gradient(135deg, #d48ca6, #f8d7e5);
+  padding: 4rem 3rem;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 25px 80px rgba(212, 140, 166, 0.3);
+}
+
+.cta-content h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.cta-content > p {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  background: white;
+  color: #d48ca6;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  min-width: 180px;
+  justify-content: center;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+  background: #f8f9fa;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #d48ca6;
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+.cta-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 1024px) {
-  .recommend-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-    .recommend-image {
-    height: 200px;
-  }
-  
-  .nav-menu {
-    gap: 1.5rem;
-  }
-  .hero-content h1 {
-    font-size: 6.75rem;
-  }
-  
-  .hero-content p {
-    font-size: 2.4rem;
-  }
-    .hero {
-    height: 70vh;
-    margin: 70px auto 0 auto;
-    border-radius: 10px;
-    width: calc(100% - 2rem);
-  }
-  
-  h2 {
-    font-size: 3rem;
-  }
-  
-  #contact h2 {
-    font-size: 3rem;
-  }
-  
-  section {
-    padding: 2rem;
-    margin-bottom: 3rem;
-    width: calc(100% - 2rem);
-  }
-  
-  main {
-    padding: 1rem;
-  }
-  
-  p {
-    font-size: 1.1rem;
-  }
-  .concept-content h3 {
-    font-size: 2.2rem;
-    letter-spacing: 1.5px;
-  }
-  
-  .concept-features {
+  .process-steps {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .step-arrow {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+  
+  .methods-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 768px) {  .hero-content h1 {
-    font-size: 5.25rem;
+@media (max-width: 768px) {
+  .reservation-header h2 {
+    font-size: 3rem;
   }
   
-  .hero-content p {
-    font-size: 2.1rem;
-  }
-    .hero {
-    height: 60vh;
-    margin: 60px auto 0 auto;
-    border-radius: 8px;
-    width: calc(100% - 1rem);
+  .process-title,
+  .methods-title,
+  .benefits-title {
+    font-size: 2rem;
   }
   
-  h2 {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-  }
-  
-  #contact h2 {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-  }
-  
-  section {
-    padding: 1.5rem;
-    margin-bottom: 2.5rem;
-    width: calc(100% - 1rem);
-  }
-  
-  main {
-    padding: 0.5rem;
-  }
-  
-  p {
-    font-size: 1rem;
-  }
-    .concept-content h3 {
-    font-size: 1.9rem;
-  }
-  
-  .feature-item {
-    padding: 2rem;
-  }
-  
-  .concept-message {
-    padding: 2.5rem 2rem;
-  }  .main-message {
-    font-size: 1.9rem;
-    margin-bottom: 2.5rem;
-    letter-spacing: 1.5px;
-  }
-    .sub-message {
-    font-size: 1.4rem;
-    line-height: 1.9;
-    font-weight: 300;
-  }
-  
-  .concept-closing {
-    padding: 2.5rem 1.5rem;
-  }
-  
-  .recommend-content {
-    padding: 1.5rem;
-  }
-  
-  .logo {
-    font-size: 1.6rem;
-  }
-  
-  .nav {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-    .nav-menu {
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .nav-menu a {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.6rem;
-  }
-  
-  main {
-    padding: 1rem;
-  }
-    section {
-    padding: 1.5rem;
-  }
-  
-  .recommend-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .recommend-image {
-    height: 180px;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
-  }
-  .footer-info p {
-    text-align: center;
-  }
-  
-  .concept-message {
-    padding: 2rem 1.5rem;
-  }  .main-message {
-    font-size: 1.9rem;
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
-  }
-    .sub-message {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    font-weight: 300;
-  }
-  
-  .concept-closing {
+  .process-steps {
     padding: 2rem 1rem;
   }
   
-  .feature-item {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 4.2rem;
-    letter-spacing: 2px;
+  .step-item {
+    padding: 1.5rem 1rem;
   }
   
-  .hero-content p {
-    font-size: 1.65rem;
-  }
-
-  .nav-menu {
-    gap: 0.5rem;
+  .method-item {
+    padding: 2rem 1.5rem;
   }
   
-  .nav-menu a {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
+  .cta-content {
+    padding: 3rem 2rem;
   }
   
-  .recommend-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .cta-content h3 {
+    font-size: 1.8rem;
   }
   
-  .recommend-image {
-    height: 160px;
-  }
-    .recommend-content {
-    padding: 1rem;
-  }
-    .concept-content h3 {
-    font-size: 1.6rem;
-    letter-spacing: 1.2px;
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
   }
   
-  .main-message {
-    font-size: 1.6rem;
-    margin-bottom: 1.8rem;
-    letter-spacing: 1.2px;
-  }
-    .sub-message {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    font-weight: 300;
-  }
-  
-  .concept-closing {
-    padding: 1.5rem 0.8rem;
+  .cta-button {
+    min-width: 250px;
   }
 }

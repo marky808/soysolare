@@ -1,116 +1,356 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>  <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soy Solare</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Soy Solare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- ヘッダー -->
+<body>  <!-- ヘッダー -->
   <header class="header">
     <nav class="nav">
-      <div class="logo">Soy Solare</div>      <ul class="nav-menu">
+      <div class="logo">Soy Solare</div>
+      <button class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>      <ul class="nav-menu" id="nav-menu">
         <li><a href="#hero">ホーム</a></li>
-        <li><a href="#concept">コンセプト</a></li>
-        <li><a href="#recommend">おすすめ</a></li>
-        <li><a href="#bridal">ブライダル</a></li>
+        <li><a href="concept.html">コンセプト</a></li>
+        <li><a href="#recommend">メニュー</a></li>
+        <li><a href="bridal.html">ブライダル</a></li>
         <li><a href="#reservation">ご予約</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
       </ul>
     </nav>
   </header>
-
   <div class="hero" id="hero">
-    <div class="hero-content">
-      <h1>Soy Solare</h1>
-      <p>完全予約・女性専用プライベートサロン</p>
+    <div class="hero-content">      <h1 class="sparkle-text">
+        <span class="sparkle-letters">Soy Solare</span>
+        <div class="sparkles sparkles-sharp">
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+        </div>
+      </h1>
+      <p class="sparkle-subtitle">
+        <span class="sparkle-letters">完全予約・女性専用プライベートサロン</span>
+        <div class="sparkles sparkles-sharp">
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+        </div>
+      </p>
     </div>
   </div>
 
   <main>    <section id="concept">
-      <h2>Concept</h2>
-      <div class="concept-content">
-        <h3>あなただけの特別な時間を</h3>
-        <p>忙しい毎日に疲れたあなたに、本当のリラクゼーションと美しさを。</p>
+      <div class="concept-container">        <div class="concept-header">          <h2>
+            <span class="sparkle-letters">Concept</span>
+          </h2>
+          <h3>
+            <span class="sparkle-letters">あなただけの特別な時間を</span>
+          </h3>
+          <p class="concept-description">忙しい毎日に疲れたあなたに、本当のリラクゼーションと美しさを。</p>
+        </div>
         
-        <div class="concept-features">
-          <div class="feature-item">
-            <h4>完全プライベート空間</h4>
-            <p>他のお客様と会うことのない完全貸し切りサロン。誰にも邪魔されない、あなただけの贅沢な時間をお過ごしください。</p>
+        <div class="concept-content">
+          <!-- 特徴1: 画像付きカード -->
+          <div class="feature-card feature-card-left">
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="プライベート空間">
+            </div>
+            <div class="feature-text">
+              <h4>完全プライベート空間</h4>
+              <p>他のお客様と会うことのない完全貸し切りサロン。誰にも邪魔されない、あなただけの贅沢な時間をお過ごしください。</p>
+            </div>
           </div>
           
-          <div class="feature-item">
-            <h4>女性施術者による安心ケア</h4>
-            <p>デリケートな施術も、同じ女性だからこそ理解できる細やかな心配りで。リラックスして美しくなる時間を大切にします。</p>
+          <!-- 特徴2: 画像付きカード（右画像） -->
+          <div class="feature-card feature-card-right">
+            <div class="feature-text">
+              <h4>女性施術者による安心ケア</h4>
+              <p>デリケートな施術も、同じ女性だからこそ理解できる細やかな心配りで。リラックスして美しくなる時間を大切にします。</p>
+            </div>
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="女性施術者">
+            </div>
           </div>
           
-          <div class="feature-item">
-            <h4>医療レベルの最新技術</h4>
-            <p>クリニック級の高性能機器と確かな技術で、確実な結果をお約束。美容皮膚科と同等の施術をサロンで気軽に。</p>
-          </div>        </div>        <div class="concept-closing">
-          <p class="main-message">「自分らしい美しさ」を追求する<br>あなたを、心から応援いたします。</p>
-          <p class="sub-message">一人ひとりの肌質やお悩みに寄り添い、<br>オーダーメイドの施術プランをご提案。<br>本当の美しさは、心からリラックスした<br>時間の中で生まれます。</p>
+          <!-- 特徴3: 画像付きカード -->
+          <div class="feature-card feature-card-left">
+            <div class="feature-image">
+              <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" alt="最新技術">
+            </div>
+            <div class="feature-text">
+              <h4>医療レベルの最新技術</h4>
+              <p>クリニック級の高性能機器と確かな技術で、確実な結果をお約束。美容皮膚科と同等の施術をサロンで気軽に体験いただけます。</p>
+            </div>
+          </div>
+          
+          <!-- 最終メッセージ: 背景画像付き -->
+          <div class="concept-closing">
+            <div class="closing-background">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="美容サロン">
+            </div>
+            <div class="closing-content">
+              <p class="main-message">「自分らしい美しさ」を追求する<br>あなたを、心から応援いたします。</p>
+              <p class="sub-message">一人ひとりの肌質やお悩みに寄り添い、オーダーメイドの施術プランをご提案。<br>本当の美しさは、心からリラックスした時間の中で生まれます。</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>    <section id="recommend">
-      <h2>Recommend</h2>
-      <p>当サロンで特に人気の高い4つのメニューをご紹介します</p>
-      
-      <div class="recommend-grid">
-        <div class="recommend-item">
-          <div class="recommend-image">
-            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=500&q=80" alt="生プラセンタ美顔">
-          </div>          <div class="recommend-content">
-            <h3>生プラセンタ美顔</h3>
-            <p>医療レベルの機器で浸透力が大幅アップ。ハリと透明感をしっかり実感できる人気の美顔コースです。</p>
-            <a href="#bridal" class="detail-link">詳細はこちら</a>
-          </div>
+      <div class="recommend-container">        <div class="recommend-header">        <h2>
+          <span class="sparkle-letters">Recommend</span>
+        </h2>
+          <p class="recommend-subtitle">当サロンで特に人気の高い4つのメニューをご紹介します</p>
         </div>
-
-        <div class="recommend-item">
-          <div class="recommend-image">
-            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80" alt="レモンボトル施術">
-          </div>          <div class="recommend-content">
-            <h3>レモンボトル施術</h3>
-            <p>話題の高濃度ビタミン美容でエイジングケア。お肌の明るさとハリを求める方におすすめです。</p>
-            <a href="#reservation" class="detail-link">詳細はこちら</a>
+        
+        <div class="recommend-grid">
+          <div class="recommend-item">
+            <div class="recommend-image">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=500&q=80" alt="生プラセンタ美顔">
+            </div>
+            <div class="recommend-content">
+              <h3>生プラセンタ美顔</h3>
+              <p>医療レベルの機器で浸透力が大幅アップ。ハリと透明感をしっかり実感できる人気の美顔コースです。</p>
+              <a href="#bridal" class="detail-link">詳細はこちら</a>
+            </div>
           </div>
-        </div>        <div class="recommend-item">
-          <div class="recommend-image">
-            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=500&q=80" alt="医療級脱毛">
-          </div>          <div class="recommend-content">
-            <h3>医療級脱毛</h3>
-            <p>敏感肌の方も安心の最新脱毛機器を使用。女性施術者による丁寧なケアでリラックスできます。</p>
-            <a href="#reservation" class="detail-link">詳細はこちら</a>
-          </div>
-        </div>
 
-        <div class="recommend-item">
-          <div class="recommend-image">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80" alt="ブライダルエステ">
-          </div>          <div class="recommend-content">
-            <h3>ブライダルエステ</h3>
-            <p>人生最高の日のために。挙式3ヶ月前からのトータルケアで、最高の輝きを手に入れませんか？</p>
-            <a href="#bridal" class="detail-link">詳細はこちら</a>
+          <div class="recommend-item">
+            <div class="recommend-image">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80" alt="レモンボトル施術">
+            </div>
+            <div class="recommend-content">
+              <h3>レモンボトル施術</h3>
+              <p>話題の高濃度ビタミン美容でエイジングケア。お肌の明るさとハリを求める方におすすめです。</p>
+              <a href="#reservation" class="detail-link">詳細はこちら</a>
+            </div>
+          </div>
+
+          <div class="recommend-item">
+            <div class="recommend-image">
+              <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=500&q=80" alt="医療級脱毛">
+            </div>
+            <div class="recommend-content">
+              <h3>医療級脱毛</h3>
+              <p>敏感肌の方も安心の最新脱毛機器を使用。女性施術者による丁寧なケアでリラックスできます。</p>
+              <a href="#reservation" class="detail-link">詳細はこちら</a>
+            </div>
+          </div>          <div class="recommend-item">
+            <div class="recommend-image">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=80" alt="ブライダルエステ">
+            </div>
+            <div class="recommend-content">
+              <h3>ブライダルエステ</h3>
+              <p>人生最高の日のために。挙式3ヶ月前からのトータルケアで、最高の輝きを手に入れませんか？</p>
+              <a href="bridal.html" class="detail-link">詳細はこちら</a>
+            </div>
           </div>
         </div>
       </div>
     </section>    <section id="bridal">
-      <h2>Bridal Esthetics</h2>
-      <p>人生で最も美しい日のために、特別なブライダルコースをご用意しています。</p>
-      <p>挙式3ヶ月前からのトータルケアで、最高の輝きを手に入れませんか？</p>
+      <div class="bridal-section">
+        <div class="bridal-hero-mini">
+          <div class="bridal-overlay"></div>
+          <div class="bridal-content">
+            <h2>
+              <span class="sparkle-letters">Bridal Esthetics</span>
+            </h2>
+            <p class="bridal-catchcopy">人生で最も美しい日のために</p>
+            <p class="bridal-description">3ヶ月間のトータルケアで、花嫁としての最高の輝きを手に入れませんか？</p>
+            
+            <div class="bridal-highlights">
+              <div class="highlight-item">
+                <div class="highlight-icon">💐</div>
+                <h3>3ヶ月プログラム</h3>
+                <p>段階的なケアで当日の美しさを最大化</p>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">✨</div>
+                <h3>トータルビューティー</h3>
+                <p>フェイシャル・ボディ・脱毛まで完全サポート</p>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">🌸</div>
+                <h3>完全オーダーメイド</h3>
+                <p>あなただけの特別な施術プラン</p>
+              </div>
+            </div>
+            
+            <div class="bridal-pricing">
+              <div class="price-highlight">
+                <span class="price-label">プレミアムコース</span>
+                <span class="price-amount">¥180,000<small>（3ヶ月）</small></span>
+                <span class="price-note">通常¥220,000 → ¥40,000お得！</span>
+              </div>
+            </div>
+            
+            <div class="bridal-cta">
+              <a href="bridal.html" class="bridal-button primary">詳しく見る</a>
+              <a href="#reservation" class="bridal-button secondary">無料相談予約</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>    <section id="reservation">
-      <h2>Reservation</h2>
-      <p>完全予約制のプライベートサロンです。</p>
-      <p>お電話またはLINEにてご予約を承っております。</p>
-      <p><strong>TEL: 045-123-4567</strong></p>
-      <p>営業時間: 10:00〜20:00（不定休）</p>
-    </section>    <section id="contact">
-      <h2>Contact</h2>
-      <p>TEL: 045-123-4567</p>
-      <p>横浜市・仲町台駅徒歩3分</p>
+      <div class="reservation-section">
+        <div class="reservation-header">
+          <h2>
+            <span class="sparkle-letters">Reservation</span>
+          </h2>
+          <p class="reservation-subtitle">完全予約制のプライベートサロンで、あなただけの特別な時間を</p>
+        </div>
+
+        <!-- 予約の流れ -->
+        <div class="reservation-process">
+          <h3 class="process-title">ご予約から施術まで</h3>
+          <div class="process-steps">
+            <div class="step-item">
+              <div class="step-number">01</div>
+              <div class="step-icon">📞</div>
+              <h4>お電話・LINE予約</h4>
+              <p>お気軽にお電話またはLINEでご連絡ください。ご希望の日時やお悩みを伺います。</p>
+              <div class="step-details">
+                <span class="detail-time">所要時間：3分</span>
+              </div>
+            </div>
+
+            <div class="step-arrow">→</div>
+
+            <div class="step-item">
+              <div class="step-number">02</div>
+              <div class="step-icon">💬</div>
+              <h4>カウンセリング</h4>
+              <p>お肌の状態やご要望を詳しくお聞きし、最適な施術プランをご提案いたします。</p>
+              <div class="step-details">
+                <span class="detail-time">所要時間：30分</span>
+                <span class="detail-note">※無料</span>
+              </div>
+            </div>
+
+            <div class="step-arrow">→</div>
+
+            <div class="step-item">
+              <div class="step-number">03</div>
+              <div class="step-icon">✨</div>
+              <h4>施術開始</h4>
+              <p>完全プライベート空間で、リラックスしながら美しさを磨く特別な時間をお過ごしください。</p>
+              <div class="step-details">
+                <span class="detail-time">所要時間：60〜120分</span>
+              </div>
+            </div>
+
+            <div class="step-arrow">→</div>
+
+            <div class="step-item">
+              <div class="step-number">04</div>
+              <div class="step-icon">🌸</div>
+              <h4>アフターケア</h4>
+              <p>施術後のお肌ケア方法をアドバイス。次回のご予約も承ります。</p>
+              <div class="step-details">
+                <span class="detail-time">所要時間：15分</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 予約方法 -->
+        <div class="reservation-methods">
+          <h3 class="methods-title">ご予約方法</h3>
+          <div class="methods-grid">
+            <div class="method-item phone">
+              <div class="method-icon">📞</div>
+              <h4>お電話でのご予約</h4>
+              <p class="tel-number">045-123-4567</p>
+              <p class="method-description">直接お話しながら、詳しくご相談いただけます</p>
+              <div class="method-hours">
+                <p>受付時間：10:00〜19:00</p>
+                <p>定休日：不定休</p>
+              </div>
+              <a href="tel:045-123-4567" class="method-button">今すぐ電話</a>
+            </div>
+
+            <div class="method-item line">
+              <div class="method-icon">💬</div>
+              <h4>LINEでのご予約</h4>
+              <p class="line-id">@soysolare</p>
+              <p class="method-description">24時間いつでもメッセージでご予約可能</p>
+              <div class="method-benefits">
+                <p>✓ 24時間受付</p>
+                <p>✓ 写真での相談可能</p>
+                <p>✓ お得な情報も配信</p>
+              </div>
+              <a href="#" class="method-button line-button">LINE予約</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 予約のメリット -->
+        <div class="reservation-benefits">
+          <h3 class="benefits-title">完全予約制の特別なメリット</h3>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <div class="benefit-icon">🔒</div>
+              <h4>完全プライベート</h4>
+              <p>他のお客様と会うことがない贅沢な空間で、リラックスして施術を受けられます</p>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">👥</div>
+              <h4>女性施術者</h4>
+              <p>同じ女性だからこそ理解できる繊細なお悩みも、安心してご相談いただけます</p>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">⏰</div>
+              <h4>時間をかけた丁寧な施術</h4>
+              <p>お一人お一人にしっかりと時間をかけて、最高の仕上がりを追求します</p>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">✨</div>
+              <h4>オーダーメイド</h4>
+              <p>お肌の状態やご要望に合わせて、あなただけの施術プランを作成いたします</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="reservation-cta">
+          <div class="cta-content">
+            <h3>今すぐご予約・無料相談</h3>
+            <p>初回の方は無料カウンセリングからスタート。お気軽にお問い合わせください。</p>
+            <div class="cta-buttons">
+              <a href="tel:045-123-4567" class="cta-button primary">
+                <span class="button-icon">📞</span>
+                電話で予約
+              </a>
+              <a href="#" class="cta-button secondary">
+                <span class="button-icon">💬</span>
+                LINEで相談
+              </a>
+            </div>
+            <p class="cta-note">※ 当日予約も可能です（空きがある場合）</p>
+          </div>
+        </div>
+      </div>
+    </section><section id="contact">      <div class="section-container">
+        <h2>
+          <span class="sparkle-letters">Contact</span>
+        </h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p class="tel-number">TEL: 045-123-4567</p>
+            <p class="location">横浜市・仲町台駅徒歩3分</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -122,17 +362,18 @@
         <p>完全予約・女性専用プライベートサロン</p>
         <p>〒224-0041 神奈川県横浜市都筑区仲町台</p>
         <p>TEL: 045-123-4567</p>
-      </div>      <div class="footer-nav">
-        <h4>メニュー</h4>
-        <ul>
-          <li><a href="#concept">コンセプト</a></li>
-          <li><a href="#recommend">おすすめ</a></li>
-          <li><a href="#bridal">ブライダル</a></li>
+      </div>
+      <div class="footer-nav">
+        <h4>メニュー</h4>        <ul>
+          <li><a href="concept.html">コンセプト</a></li>
+          <li><a href="#recommend">メニュー</a></li>
+          <li><a href="bridal.html">ブライダル</a></li>
           <li><a href="#reservation">ご予約</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </div>
-    </div>    <div class="footer-bottom">
+    </div>
+    <div class="footer-bottom">
       <p>&copy; 2025 Soy Solare. All rights reserved.</p>
     </div>
   </footer>
