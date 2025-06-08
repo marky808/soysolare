@@ -1,0 +1,481 @@
+/* Bridal Page Specific Styles */
+
+/* ブライダルヒーロー */
+.bridal-hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  padding-top: 140px;
+}
+
+.bridal-hero-content h1 {
+  font-size: 4.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #f8d7e5;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* セクション共通 */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.section-container h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #d48ca6;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 4rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+/* ブライダルコンセプト */
+.bridal-concept {
+  background: linear-gradient(135deg, #fdf6f8 0%, #f8d7e5 100%);
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.concept-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.concept-item:hover {
+  transform: translateY(-5px);
+}
+
+.concept-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.concept-item h3 {
+  font-size: 1.5rem;
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.concept-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ブライダルメニュー */
+.menu-grid {
+  display: grid;
+  gap: 4rem;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(212, 140, 166, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-8px);
+}
+
+.menu-item:nth-child(even) {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.menu-item:nth-child(even) .menu-image {
+  order: 2;
+}
+
+.menu-item:nth-child(even) .menu-content {
+  order: 1;
+}
+
+.menu-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-image img {
+  transform: scale(1.05);
+}
+
+.menu-content {
+  padding: 2rem;
+}
+
+.menu-content h3 {
+  font-size: 1.8rem;
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.menu-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.menu-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.duration {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #d48ca6;
+}
+
+/* ブライダルプラン */
+.bridal-plans {
+  background: linear-gradient(135deg, #fdf6f8 0%, #f8d7e5 100%);
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.plan-item {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(212, 140, 166, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.plan-item.recommended {
+  border: 3px solid #d48ca6;
+  transform: scale(1.05);
+}
+
+.plan-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(212, 140, 166, 0.2);
+}
+
+.plan-item.recommended:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d48ca6;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.plan-title {
+  font-size: 1.5rem;
+  color: #d48ca6;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.plan-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.plan-period {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #999;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.plan-features li {
+  padding: 0.5rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.plan-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #d48ca6;
+  font-weight: bold;
+}
+
+.plan-note {
+  color: #d48ca6;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* お客様の声 */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.testimonial-item {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-content p {
+  font-style: italic;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.testimonial-content p::before {
+  content: """;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 2rem;
+  color: #d48ca6;
+  font-family: 'Dancing Script', cursive;
+}
+
+.testimonial-author {
+  text-align: right;
+}
+
+.name {
+  display: block;
+  font-weight: 600;
+  color: #d48ca6;
+  margin-bottom: 0.3rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* CTA */
+.bridal-cta {
+  background: linear-gradient(135deg, #d48ca6 0%, #f8d7e5 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.cta-button.primary {
+  background: white;
+  color: #d48ca6;
+}
+
+.cta-button.primary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #d48ca6;
+  transform: translateY(-2px);
+}
+
+.cta-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .bridal-hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .section-container {
+    padding: 4rem 1rem;
+  }
+  
+  .section-container h2 {
+    font-size: 2.5rem;
+  }
+  
+  .menu-item,
+  .menu-item:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-item:nth-child(even) .menu-image,
+  .menu-item:nth-child(even) .menu-content {
+    order: unset;
+  }
+  
+  .menu-details {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .plan-item.recommended {
+    transform: none;
+  }
+}
+
+/* 14インチノートブック向け調整 */
+@media (max-width: 1440px) and (max-height: 900px) {
+  .bridal-hero {
+    height: 75vh;
+    padding-top: 120px;
+  }
+  
+  .bridal-hero-content h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1366px) and (max-height: 768px) {
+  .bridal-hero {
+    height: 70vh;
+    padding-top: 110px;
+  }
+  
+  .bridal-hero-content h1 {
+    font-size: 3.5rem;
+  }
+}

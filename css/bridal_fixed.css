@@ -1,0 +1,380 @@
+/* Bridal Page Specific Styles */
+
+/* ブライダルヒーロー */
+.bridal-hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  padding-top: 140px;
+}
+
+.bridal-hero-content h1 {
+  font-size: 4.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #f8d7e5;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* セクション共通 */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.section-container h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #d48ca6;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+/* ブライダルメニュー */
+.bridal-menu {
+  background: #fdf6f8;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(212, 140, 166, 0.15);
+}
+
+.menu-item:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.menu-item:nth-child(even) .menu-image {
+  order: 2;
+}
+
+.menu-item:nth-child(even) .menu-content {
+  order: 1;
+}
+
+.menu-image {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.menu-content {
+  padding: 2.5rem;
+}
+
+.menu-content h3 {
+  font-size: 2.2rem;
+  color: #d48ca6;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.menu-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.menu-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.menu-price {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #d48ca6;
+}
+
+.menu-duration {
+  font-size: 1rem;
+  color: #888;
+}
+
+.menu-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.menu-features li {
+  padding: 0.3rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.menu-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #d48ca6;
+  font-weight: bold;
+}
+
+/* プラン */
+.bridal-plans {
+  background: linear-gradient(135deg, #fdf6f8 0%, #f8d7e5 100%);
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.plan-item {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.plan-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(212, 140, 166, 0.2);
+}
+
+.plan-item.recommended {
+  transform: scale(1.05);
+  border: 2px solid #d48ca6;
+}
+
+.plan-item.recommended::before {
+  content: 'おすすめ';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d48ca6;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.plan-title {
+  font-size: 2rem;
+  color: #d48ca6;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.plan-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.plan-price span {
+  font-size: 1rem;
+  color: #888;
+  font-weight: normal;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.plan-features li {
+  padding: 0.5rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.plan-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #d48ca6;
+  font-weight: bold;
+}
+
+/* CTA */
+.bridal-cta {
+  background: #d48ca6;
+  color: white;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.cta-content h3 {
+  font-size: 2.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: #d48ca6;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.cta-button:hover {
+  background: #f8d7e5;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #d48ca6;
+}
+
+/* レスポンシブ */
+/* 14インチノートブック向け調整 */
+@media (max-width: 1440px) and (max-height: 900px) {
+  .bridal-hero {
+    height: 75vh;
+    padding-top: 120px;
+  }
+  
+  .bridal-hero-content h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1366px) and (max-height: 768px) {
+  .bridal-hero {
+    height: 70vh;
+    padding-top: 110px;
+  }
+  
+  .bridal-hero-content h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bridal-hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .section-container {
+    padding: 4rem 1rem;
+  }
+  
+  .section-container h2 {
+    font-size: 2.5rem;
+  }
+  
+  .menu-item,
+  .menu-item:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-item:nth-child(even) .menu-image,
+  .menu-item:nth-child(even) .menu-content {
+    order: unset;
+  }
+  
+  .menu-details {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .plan-item.recommended {
+    transform: none;
+  }
+}
