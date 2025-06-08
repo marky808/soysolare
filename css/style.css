@@ -912,13 +912,16 @@ section h2 {
   margin: 0.8rem 0;
 }
 
-/* フッター - 洗練されたデザイン */
+/* フッター - より洗練されたオシャレなデザイン */
 .footer {
-  background: linear-gradient(135deg, rgba(212, 140, 166, 0.08) 0%, rgba(248, 215, 229, 0.15) 100%);
+  background: linear-gradient(135deg, 
+    rgba(212, 140, 166, 0.15) 0%, 
+    rgba(248, 215, 229, 0.25) 50%, 
+    rgba(255, 255, 255, 0.95) 100%);
   margin-top: 6rem;
-  padding: 4rem 0 1rem;
+  padding: 5rem 0 2rem;
   position: relative;
-  border-top: 1px solid rgba(212, 140, 166, 0.1);
+  overflow: hidden;
 }
 
 .footer::before {
@@ -927,86 +930,241 @@ section h2 {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #d48ca6 50%, transparent 100%);
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #d48ca6 25%, 
+    #f8d7e5 50%, 
+    #d48ca6 75%, 
+    transparent 100%);
+  box-shadow: 0 2px 10px rgba(212, 140, 166, 0.3);
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212, 140, 166, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+  z-index: 1;
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
   padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-info,
 .footer-nav {
-  background: rgba(255, 255, 255, 0.6);
-  padding: 2.5rem;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 140, 166, 0.1);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3rem 2.5rem;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(212, 140, 166, 0.2);
+  box-shadow: 0 15px 40px rgba(212, 140, 166, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-info:hover,
+.footer-nav:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(212, 140, 166, 0.25);
+}
+
+.footer-info::before,
+.footer-nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #d48ca6, #f8d7e5, #d48ca6);
+  z-index: 1;
+}
+
+.footer-info {
+  grid-column: 1;
 }
 
 .footer-info h3 {
   color: #d48ca6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-family: 'Dancing Script', cursive;
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-info h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #d48ca6, #f8d7e5);
+  border-radius: 2px;
 }
 
 .footer-info p {
-  color: #666;
-  margin-bottom: 0.8rem;
+  color: #555;
+  margin-bottom: 1rem;
   text-align: left;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-info .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  background: rgba(212, 140, 166, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.footer-info .contact-item:hover {
+  background: rgba(212, 140, 166, 0.15);
+  transform: translateX(5px);
+}
+
+.footer-info .contact-icon {
+  width: 20px;
+  height: 20px;
+  background: #d48ca6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
 .footer-nav h4 {
   color: #d48ca6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-family: 'Dancing Script', cursive;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-nav h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #d48ca6, #f8d7e5);
+  border-radius: 1px;
 }
 
 .footer-nav ul {
   list-style: none;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-nav ul li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .footer-nav ul li a {
-  color: #666;
+  color: #555;
   text-decoration: none;
   transition: all 0.3s ease;
-  padding: 0.5rem 0;
+  padding: 0.8rem 1.2rem;
   display: block;
-  border-radius: 8px;
-  padding-left: 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+  position: relative;
+  background: rgba(248, 215, 229, 0.08);
+}
+
+.footer-nav ul li a::before {
+  content: '→';
+  position: absolute;
+  left: 0.8rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  color: #d48ca6;
 }
 
 .footer-nav ul li a:hover {
   color: #d48ca6;
-  background: rgba(212, 140, 166, 0.1);
-  transform: translateX(5px);
+  background: rgba(212, 140, 166, 0.15);
+  transform: translateX(10px);
+  padding-left: 2.2rem;
+}
+
+.footer-nav ul li a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .footer-bottom {
   text-align: center;
-  padding: 2.5rem;
-  margin-top: 2rem;
-  border-top: 1px solid rgba(212, 140, 166, 0.1);
+  padding: 3rem 2rem 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(212, 140, 166, 0.2);
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d48ca6, transparent);
 }
 
 .footer-bottom p {
-  color: #999;
-  font-size: 0.95rem;
+  color: #777;
+  font-size: 1rem;
   font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  position: relative;
+}
+
+.footer-bottom p::before {
+  content: '♢';
+  color: #d48ca6;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.footer-bottom p::after {
+  content: '♢';
+  color: #d48ca6;
+  margin-left: 10px;
+  font-size: 1.2rem;
 }
 
 /* ブライダルセクション - 訴求力強化 */
@@ -1146,6 +1304,7 @@ section h2 {
 
 .highlight-item:nth-child(2) .highlight-icon::after {
   content: '';
+  position: absolute;
   width: 3px;
   height: 3px;
   background: white;
@@ -1597,12 +1756,13 @@ section h2 {
 /* 電話アイコン - より現代的でプロフェッショナルなデザイン */
 .method-item.phone .method-icon::before {
   content: '';
+  position: absolute;
   width: 36px;
   height: 36px;
   background: white;
   border-radius: 8px;
-  position: relative;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  top: 2px;
+  left: 2px;
 }
 
 .method-item.phone .method-icon::after {
@@ -1624,12 +1784,13 @@ section h2 {
 /* LINEチャットアイコン - より魅力的なメッセージングデザイン */
 .method-item.line .method-icon::before {
   content: '';
+  position: absolute;
   width: 34px;
   height: 24px;
   background: white;
   border-radius: 12px;
-  position: relative;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  top: 2px;
+  left: 2px;
 }
 
 .method-item.line .method-icon::after {
@@ -2102,5 +2263,58 @@ section h2 {
   
   .cta-button {
     min-width: 250px;
+  }
+}
+
+/* フッターのレスポンシブ対応 */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-info {
+    grid-column: 1;
+  }
+  
+  .footer-info,
+  .footer-nav {
+    padding: 2rem 1.5rem;
+  }
+  
+  .footer-info h3 {
+    font-size: 1.8rem;
+  }
+  
+  .footer-nav h4 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .contact-icon {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 3rem 0 1rem;
+  }
+  
+  .footer-content {
+    padding: 0 1rem;
+  }
+  
+  .footer-bottom {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.9rem;
   }
 }
