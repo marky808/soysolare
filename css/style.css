@@ -749,11 +749,39 @@ section h2 {
 
 .recommend-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
   margin-top: 4rem;
   position: relative;
   z-index: 2;
+}
+
+/* 5つのアイテム用の特別レイアウト */
+.recommend-item:nth-child(1),
+.recommend-item:nth-child(2) {
+  grid-column: span 1;
+}
+
+.recommend-item:nth-child(3) {
+  grid-column: span 1;
+}
+
+.recommend-item:nth-child(4),
+.recommend-item:nth-child(5) {
+  grid-column: span 1;
+}
+
+/* 最後の行のアイテム（4番目と5番目）を中央に配置 */
+.recommend-item:nth-child(4) {
+  grid-column: 1 / 2;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.recommend-item:nth-child(5) {
+  grid-column: 3 / 4;
+  margin: 0 auto;
+  max-width: 90%;
 }
 
 .recommend-item {
@@ -2223,6 +2251,27 @@ section h2 {
   .methods-grid {
     grid-template-columns: 1fr;
   }
+
+  /* タブレット用のおすすめメニューレイアウト */
+  .recommend-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .recommend-item:nth-child(1),
+  .recommend-item:nth-child(2),
+  .recommend-item:nth-child(3),
+  .recommend-item:nth-child(4) {
+    grid-column: span 1;
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .recommend-item:nth-child(5) {
+    grid-column: 1 / 3;
+    margin: 0 auto;
+    max-width: 60%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2263,6 +2312,27 @@ section h2 {
   
   .cta-button {
     min-width: 250px;
+  }
+
+  /* おすすめメニューのレスポンシブ対応 */
+  .recommend-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .recommend-item:nth-child(1),
+  .recommend-item:nth-child(2),
+  .recommend-item:nth-child(3),
+  .recommend-item:nth-child(4),
+  .recommend-item:nth-child(5) {
+    grid-column: 1;
+    margin: 0;
+    max-width: 100%;
+    transform: none !important;
+  }
+  
+  .recommend-item:hover {
+    transform: translateY(-0.5rem) scale(1.02);
   }
 }
 
