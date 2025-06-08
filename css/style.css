@@ -119,16 +119,20 @@ p, .sub-message {
   transform: rotate(45deg) translate(-6px, -7px);
 }
 
-/* ヒーローセクション - より洗練されたデザイン */
+/* ヒーローセクション - シンプルなデザイン */
 .hero {
   height: 75vh;
-  display: flex;  align-items: center;  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: url('../images/soysolare2.png') center/cover;
   position: relative;
   overflow: hidden;
   margin-top: 0;
   padding-top: 140px;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)),
+    url('../images/soysolare2.png') center/cover;
 }
 
 .hero-content {
@@ -1090,8 +1094,90 @@ section h2 {
 }
 
 .highlight-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8d7e5, #e8c7d3);
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(212, 140, 166, 0.3);
+}
+
+/* クラウン（王冠）アイコン for 3ヶ月プログラム */
+.highlight-item:nth-child(1) .highlight-icon::before {
+  content: '';
+  width: 28px;
+  height: 20px;
+  background: #d48ca6;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  border-top: 8px solid #d48ca6;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+.highlight-item:nth-child(1) .highlight-icon::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+    -8px 0 0 white,
+    8px 0 0 white;
+}
+
+/* 美容フェイス（顔）アイコン for トータルビューティー */
+.highlight-item:nth-child(2) .highlight-icon::before {
+  content: '';
+  width: 24px;
+  height: 30px;
+  background: #d48ca6;
+  border-radius: 50% 50% 45% 45%;
+  position: absolute;
+}
+
+.highlight-item:nth-child(2) .highlight-icon::after {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 35%;
+  left: 38%;
+  box-shadow: 
+    8px 0 0 white,
+    4px 8px 0 -1px white;
+}
+
+/* ハートアイコン for 完全オーダーメイド */
+.highlight-item:nth-child(3) .highlight-icon::before {
+  content: '';
+  width: 30px;
+  height: 27px;
+  background: #d48ca6;
+  position: absolute;
+  transform: rotate(-45deg);
+  border-radius: 50% 0;
+}
+
+.highlight-item:nth-child(3) .highlight-icon::after {
+  content: '';
+  width: 30px;
+  height: 27px;
+  background: #d48ca6;
+  position: absolute;
+  transform: rotate(45deg);
+  border-radius: 50% 0;
+}
 }
 
 .highlight-item h3 {
@@ -1299,8 +1385,110 @@ section h2 {
 }
 
 .step-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #d48ca6, #f8d7e5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(212, 140, 166, 0.3);
+}
+
+/* ステップ1: お電話・LINE予約 - 通話アイコン */
+.step-item:nth-child(1) .step-icon::before {
+  content: '';
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.step-item:nth-child(1) .step-icon::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #d48ca6;
+  border-radius: 4px 4px 8px 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ステップ2: カウンセリング - 会話・相談アイコン */
+.step-item:nth-child(3) .step-icon::before {
+  content: '';
+  width: 24px;
+  height: 18px;
+  background: white;
+  border-radius: 12px 12px 12px 3px;
+  position: relative;
+}
+
+.step-item:nth-child(3) .step-icon::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: #d48ca6;
+  border-radius: 1px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 0 #d48ca6, 0 8px 0 #d48ca6;
+}
+
+/* ステップ3: 施術開始 - スパ・美容施術アイコン */
+.step-item:nth-child(5) .step-icon::before {
+  content: '';
+  width: 30px;
+  height: 24px;
+  background: white;
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+}
+
+.step-item:nth-child(5) .step-icon::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #d48ca6;
+  border-radius: 50%;
+  top: 35%;
+  left: 40%;
+  box-shadow: 
+    8px 0 0 #d48ca6,
+    4px 8px 0 #d48ca6;
+}
+
+/* ステップ4: アフターケア - チェックマーク・完了アイコン */
+.step-item:nth-child(7) .step-icon::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.step-item:nth-child(7) .step-icon::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 6px;
+  border: 3px solid #d48ca6;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+  top: 40%;
+  left: 50%;
+  margin-left: -6px;
+  margin-top: -3px;
 }
 
 .step-item h4 {
@@ -1394,8 +1582,69 @@ section h2 {
 }
 
 .method-icon {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #d48ca6, #f8d7e5);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.3);
+  position: relative;
+}
+
+/* 電話アイコン - より現代的でプロフェッショナルなデザイン */
+.method-item.phone .method-icon::before {
+  content: '';
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.method-item.phone .method-icon::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background: #d48ca6;
+  border-radius: 2px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 -6px 0 #d48ca6,
+    0 6px 0 #d48ca6,
+    0 12px 0 #d48ca6;
+}
+
+/* LINEチャットアイコン - より魅力的なメッセージングデザイン */
+.method-item.line .method-icon::before {
+  content: '';
+  width: 34px;
+  height: 24px;
+  background: white;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.method-item.line .method-icon::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  bottom: 18%;
+  left: 65%;
+  box-shadow: 
+    -15px -5px 0 -2px #00c300,
+    -10px -5px 0 -2px #00c300,
+    -5px -5px 0 -2px #00c300;
 }
 
 .method-item h4 {
@@ -1505,8 +1754,114 @@ section h2 {
 }
 
 .benefit-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(45deg, #d48ca6, #e8b5c7);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(212, 140, 166, 0.25);
+  position: relative;
+}
+
+/* 完全プライベート - 鍵・セキュリティアイコン */
+.benefit-item:nth-child(1) .benefit-icon::before {
+  content: '';
+  width: 20px;
+  height: 24px;
+  background: white;
+  border-radius: 4px 4px 8px 8px;
+  position: relative;
+  border-top: 6px solid transparent;
+  border-left: 6px solid white;
+  border-right: 6px solid white;
+}
+
+.benefit-item:nth-child(1) .benefit-icon::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #d48ca6;
+  border-radius: 50%;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 0 -2px #d48ca6;
+}
+
+/* 女性施術者 - 女性シルエットアイコン */
+.benefit-item:nth-child(2) .benefit-icon::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  top: -3px;
+}
+
+.benefit-item:nth-child(2) .benefit-icon::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 20px;
+  background: white;
+  border-radius: 50% 50% 40% 40%;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 時間をかけた丁寧な施術 - 時計・時間アイコン */
+.benefit-item:nth-child(3) .benefit-icon::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #d48ca6;
+  position: relative;
+}
+
+.benefit-item:nth-child(3) .benefit-icon::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: #d48ca6;
+  top: 30%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(90deg);
+  box-shadow: 8px 0 0 -6px #d48ca6;
+}
+
+/* オーダーメイド - ダイヤモンド・カスタムアイコン */
+.benefit-item:nth-child(4) .benefit-icon::before {
+  content: '';
+  width: 28px;
+  height: 32px;
+  background: white;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 50% 100%, 0% 30%);
+  position: relative;
+}
+
+.benefit-item:nth-child(4) .benefit-icon::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: #d48ca6;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+    -7px -5px 0 -1px #d48ca6,
+    7px -5px 0 -1px #d48ca6,
+    0 5px 0 -1px #d48ca6;
 }
 
 .benefit-item h4 {
@@ -1597,7 +1952,62 @@ section h2 {
 }
 
 .button-icon {
-  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  opacity: 0.9;
+  margin-right: 8px;
+  position: relative;
+}
+
+/* 電話アイコン for primary buttons */
+.cta-button.primary .button-icon::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 3px;
+  top: 2px;
+  left: 2px;
+}
+
+.cta-button.primary .button-icon::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 3px;
+  background: white;
+  border-radius: 1px;
+  top: 8px;
+  left: 6px;
+  box-shadow: 0 4px 0 white;
+}
+
+/* チャットアイコン for secondary buttons */
+.cta-button.secondary .button-icon::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: currentColor;
+  border-radius: 8px 8px 8px 2px;
+  top: 2px;
+  left: 2px;
+}
+
+.cta-button.secondary .button-icon::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  top: 7px;
+  left: 6px;
+  box-shadow: 0 3px 0 white;
 }
 
 .cta-note {

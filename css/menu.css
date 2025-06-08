@@ -80,8 +80,132 @@
 }
 
 .nav-icon {
-  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d48ca6, #f8d7e5);
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Sparkle icon for フェイシャル */
+.menu-nav-item:nth-child(1) .nav-icon::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Massage/body icon for ボディ */
+.menu-nav-item:nth-child(2) .nav-icon::before {
+  content: '';
+  width: 20px;
+  height: 25px;
+  background: white;
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+}
+
+.menu-nav-item:nth-child(2) .nav-icon::after {
+  content: '';
+  width: 16px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Flower icon for 脱毛 */
+.menu-nav-item:nth-child(3) .nav-icon::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.menu-nav-item:nth-child(3) .nav-icon::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    -12px -6px 0 -6px white,
+    12px -6px 0 -6px white,
+    -12px 6px 0 -6px white,
+    12px 6px 0 -6px white,
+    0 -12px 0 -6px white,
+    0 12px 0 -6px white;
+}
+
+/* People icon for 母娘ペア */
+.menu-nav-item:nth-child(4) .nav-icon::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+
+.menu-nav-item:nth-child(4) .nav-icon::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  box-shadow: 
+    0 15px 0 -2px white,
+    -12px 15px 0 -1px white;
+}
+
+/* Bouquet icon for ブライダル */
+.menu-nav-item:nth-child(5) .nav-icon::before {
+  content: '';
+  width: 8px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-nav-item:nth-child(5) .nav-icon::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+    -8px -3px 0 -1px white,
+    8px -3px 0 -1px white,
+    -6px 3px 0 -1px white,
+    6px 3px 0 -1px white,
+    0 -8px 0 -1px white;
 }
 
 .menu-nav-item span {
@@ -278,8 +402,90 @@
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d48ca6, #f8d7e5);
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Flower/sensitivity icon for 敏感肌対応 */
+.intro-feature:nth-child(1) .feature-icon::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.intro-feature:nth-child(1) .feature-icon::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    -12px -6px 0 -8px white,
+    12px -6px 0 -8px white,
+    -12px 6px 0 -8px white,
+    12px 6px 0 -8px white,
+    0 -12px 0 -8px white,
+    0 12px 0 -8px white;
+}
+
+/* Professional/medical icon for 女性施術者 */
+.intro-feature:nth-child(2) .feature-icon::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+}
+
+.intro-feature:nth-child(2) .feature-icon::after {
+  content: '';
+  width: 25px;
+  height: 15px;
+  background: white;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Lock/security icon for プライバシー保護 */
+.intro-feature:nth-child(3) .feature-icon::before {
+  content: '';
+  width: 18px;
+  height: 22px;
+  background: white;
+  border-radius: 4px;
+  position: relative;
+}
+
+.intro-feature:nth-child(3) .feature-icon::after {
+  content: '';
+  width: 12px;
+  height: 10px;
+  border: 3px solid white;
+  border-bottom: none;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
 }
 
 .intro-feature h4 {
@@ -425,8 +631,40 @@
 }
 
 .benefit-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d48ca6, #f8d7e5);
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Gift/present icon for 特別料金でお得 */
+.benefit-icon::before {
+  content: '';
+  width: 25px;
+  height: 20px;
+  background: white;
+  border-radius: 4px;
+  position: relative;
+}
+
+.benefit-icon::after {
+  content: '';
+  width: 30px;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 -8px 0 white,
+    0 8px 0 white;
 }
 
 .pair-benefit h4 {
@@ -795,7 +1033,62 @@
 }
 
 .button-icon {
-  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  opacity: 0.9;
+  margin-right: 8px;
+  position: relative;
+}
+
+/* 電話アイコン for primary buttons */
+.cta-button.primary .button-icon::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 3px;
+  top: 2px;
+  left: 2px;
+}
+
+.cta-button.primary .button-icon::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 3px;
+  background: white;
+  border-radius: 1px;
+  top: 8px;
+  left: 6px;
+  box-shadow: 0 4px 0 white;
+}
+
+/* チャットアイコン for secondary buttons */
+.cta-button.secondary .button-icon::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: currentColor;
+  border-radius: 8px 8px 8px 2px;
+  top: 2px;
+  left: 2px;
+}
+
+.cta-button.secondary .button-icon::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  top: 7px;
+  left: 6px;
+  box-shadow: 0 3px 0 white;
 }
 
 /* レスポンシブデザイン */

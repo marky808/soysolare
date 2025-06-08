@@ -310,16 +310,55 @@ body {
 }
 
 .feature-icon {
-  font-size: 2rem;
-  min-width: 3rem;
+  width: 3rem;
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #d48ca6, #c494aa);
   border-radius: 50%;
-  color: white;
   flex-shrink: 0;
+  position: relative;
+}
+
+/* Sparkle icon for 医療レベルの最新技術 */
+.feature-item:nth-child(1) .feature-icon::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Hands/care icon for 女性施術者による安心ケア */
+.feature-item:nth-child(2) .feature-icon::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+}
+
+.feature-item:nth-child(2) .feature-icon::after {
+  content: '';
+  width: 12px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Diamond icon for 完全貸し切りサロン */
+.feature-item:nth-child(3) .feature-icon::before {
+  content: '';
+  width: 18px;
+  height: 20px;
+  background: white;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 50% 100%, 0% 30%);
 }
 
 .feature-content h5 {
@@ -390,9 +429,77 @@ body {
 }
 
 .wish-icon {
-  font-size: 4rem;
-  margin-bottom: 2rem;
-  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d48ca6, #f8d7e5);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(212, 140, 166, 0.3);
+}
+
+/* Flower icon for 美しくなる */
+.wish-item:nth-child(1) .wish-icon::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.wish-item:nth-child(1) .wish-icon::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    -15px -8px 0 -8px white,
+    15px -8px 0 -8px white,
+    -15px 8px 0 -8px white,
+    15px 8px 0 -8px white,
+    0 -15px 0 -8px white,
+    0 15px 0 -8px white;
+}
+
+/* Sparkle icon for 癒される */
+.wish-item:nth-child(2) .wish-icon::before {
+  content: '';
+  width: 35px;
+  height: 35px;
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Diamond icon for 輝き続ける */
+.wish-item:nth-child(3) .wish-icon::before {
+  content: '';
+  width: 32px;
+  height: 35px;
+  background: white;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 50% 100%, 0% 30%);
+}
+
+.wish-item:nth-child(3) .wish-icon::after {
+  content: '';
+  width: 16px;
+  height: 2px;
+  background: rgba(212, 140, 166, 0.8);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+    -8px -5px 0 -1px rgba(212, 140, 166, 0.8),
+    8px -5px 0 -1px rgba(212, 140, 166, 0.8);
 }
 
 .wish-item h3 {
